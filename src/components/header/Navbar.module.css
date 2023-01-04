@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 1rem;
+    margin-left: 5rem;
+}
+
+
+.logo img {
+    width: 3.5rem;
+    height: 3.5rem;
+    cursor: pointer;
+}
+.logo span {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media  (max-width: 768px){
+    .logo {
+
+        margin-top: 1.2rem;
+        margin-left:.5rem ;
+
+    }
+}

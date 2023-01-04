@@ -1,0 +1,80 @@
+import React from 'react'
+import css from "./Hero.module.css"
+import HeroImg from "../../assets/hero.png"
+import {RiShoppingBagFill} from "react-icons/ri"
+import {BsArrowRight} from "react-icons/bs"
+import { motion } from "framer-motion"
+
+
+
+const Hero = () => {
+    const transition ={duration:3,type:"spring"}
+  return (
+<>
+    <div className={css.container}>
+      {/* {left side} */}
+        
+        <div className={css.h_sides}>
+        <span className={css.text1}>skin protaction cream</span>
+
+            <div className={css.text2}>
+                <span>Trendy Collection</span>
+                <span>Seedily say has suitable disposal and boy.Exercise joy man children rejoiced.</span>
+            </div>
+        </div>
+
+        {/* {middle side hero imag} */}
+        <div className={css.wrapper}>
+
+            {/* {blueCircle} */}
+            <motion.div 
+            initial={{bottom :"4rem"}}
+            whileInView={{bottom:"0rem"}}
+            transition={transition}
+            className={css.blueCircle}></motion.div>
+
+            {/* {hero image} */}
+            <motion.img 
+            initial={{bottom :"-4rem"}}
+            whileInView={{bottom:"0rem"}}
+            transition={transition}
+            src={HeroImg} alt="hero_img" width={600} />
+
+
+            {/* {hero card} */}
+
+            <motion.div 
+            transition={transition}
+            initial={{right:"8%"}}
+            whileInView={{right:"4%"}}
+            className={css.cart2}>
+                <RiShoppingBagFill className={css.svgshop}/>
+
+                <div className={css.signup}>
+                    <span>Best SignUp Offers</span>
+                    <div>
+                        <BsArrowRight/>
+                    </div>
+                </div>
+            </motion.div>
+        </div>
+
+        {/* {right side  } */}
+
+        <div className={css.h_sides}>
+            <div className={css.traffic}>
+                <div>3.2M</div>
+                <div>Montly Traffic</div>
+            </div>
+            <div className={css.customers}>
+                <span>350K</span>
+                <span>Happy Customers</span>
+            </div>
+        </div>
+
+    </div>
+    </>
+  )
+}
+
+export default Hero
